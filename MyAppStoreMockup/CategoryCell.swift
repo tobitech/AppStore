@@ -10,23 +10,46 @@ import UIKit
 
 class CategoryCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    
+    var appCategory: AppCategory?
+        /*
+        {
+        
+        didSet {
+            if let name = appCategory?.name {
+                nameLabel.text = name
+            }
+        }
+    }
+    */
     private let cellId = "appCellId"
     @IBOutlet weak var appsCollectionView: UICollectionView!
+    @IBOutlet weak var nameLabel: UILabel!
     
     func setupViews() {
         backgroundColor = UIColor.clear
 
+        nameLabel.text = appCategory?.name
+        
         appsCollectionView.delegate = self
         appsCollectionView.dataSource = self
         
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        if let count = appCategory?.apps?.count {
+            return count
+        }
+        
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let appCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AppCell
+        
+        if let app = appCategory?.apps?[indexPath.item] {
+            appCell.app = app
+        }
         appCell.setupViews()
         return appCell
     }

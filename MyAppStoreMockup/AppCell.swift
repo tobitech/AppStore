@@ -9,17 +9,26 @@
 import UIKit
 
 class AppCell: UICollectionViewCell {
+    
+    var app: App?
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
     func setupViews() {
-        imageView.image = UIImage(named: "frozen")
+        imageView.image = UIImage(named: (app?.imageName)!)
         imageView.layer.cornerRadius = 16
         imageView.layer.masksToBounds = true
-        titleLabel.text = "Disney Build it: Frozen"
-        categoryLabel.text = "Entertainment"
-        priceLabel.text = "$3.99"
+        titleLabel.text = app?.name
+        categoryLabel.text = app?.category
+        
+        if let price = app?.price {
+            priceLabel.text = "$\(price)"
+        }
+        else {
+            priceLabel.text = ""
+        }
     }
 }

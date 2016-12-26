@@ -80,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A20F7171E111E0000EE4A10 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0A762CA21DBD869D009DE98F /* Models.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		0A762C601DBD568C009DE98F = {
 			isa = PBXGroup;
 			children = (
@@ -103,11 +111,11 @@
 		0A762C6B1DBD568C009DE98F /* MyAppStoreMockup */ = {
 			isa = PBXGroup;
 			children = (
+				0A20F7171E111E0000EE4A10 /* Models */,
 				0A762C6C1DBD568C009DE98F /* AppDelegate.swift */,
 				0A762C6E1DBD568C009DE98F /* ViewController.swift */,
 				0A762C9C1DBD5E47009DE98F /* CategoryCell.swift */,
 				0A762C9E1DBD6B7D009DE98F /* AppCell.swift */,
-				0A762CA21DBD869D009DE98F /* Models.swift */,
 				0A762C701DBD568C009DE98F /* Main.storyboard */,
 				0A762C731DBD568C009DE98F /* Assets.xcassets */,
 				0A762C751DBD568C009DE98F /* LaunchScreen.storyboard */,
@@ -524,6 +532,7 @@
 				0A762C931DBD568C009DE98F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A762C941DBD568C009DE98F /* Build configuration list for PBXNativeTarget "MyAppStoreMockupTests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +541,7 @@
 				0A762C961DBD568C009DE98F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0A762C971DBD568C009DE98F /* Build configuration list for PBXNativeTarget "MyAppStoreMockupUITests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +550,7 @@
 				0A762C991DBD568C009DE98F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
