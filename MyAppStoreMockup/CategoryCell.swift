@@ -9,8 +9,7 @@
 import UIKit
 
 class CategoryCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    
-    
+
     var appCategory: AppCategory?
         /*
         {

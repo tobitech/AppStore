@@ -21,6 +21,21 @@ class AppCell: UICollectionViewCell {
         imageView.image = UIImage(named: (app?.imageName)!)
         imageView.layer.cornerRadius = 16
         imageView.layer.masksToBounds = true
+        
+        if let name = app?.name {
+            let rect = NSString(string: name).boundingRect(with: CGSize(width: frame.width, height: 1000), options: NSStringDrawingOptions.usesFontLeading.union(NSStringDrawingOptions.usesLineFragmentOrigin), attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 14)], context: nil)
+            if rect.height > 20 {
+            }
+            else {
+                categoryLabel.frame = CGRect(x: 0, y: frame.width + 22, width: frame.width, height: 20)
+                priceLabel.frame = CGRect(x: 0, y: frame.width + 22, width: frame.width, height: 20)
+            }
+            
+            titleLabel.sizeToFit()
+        }
+        
+        
+        
         titleLabel.text = app?.name
         categoryLabel.text = app?.category
         
