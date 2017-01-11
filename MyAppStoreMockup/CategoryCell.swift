@@ -62,6 +62,10 @@ class CategoryCell: UICollectionViewCell, UICollectionViewDataSource, UICollecti
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 100, height: 180)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("app selected")
+    }
 
 }
 
