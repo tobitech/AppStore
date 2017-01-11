@@ -11,16 +11,20 @@ import UIKit
 class CategoryCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     var appCategory: AppCategory?
-        /*
+        
         {
         
         didSet {
+            /*
             if let name = appCategory?.name {
                 nameLabel.text = name
             }
+            */
+            
+            appsCollectionView.reloadData()
         }
     }
-    */
+
     private let cellId = "appCellId"
     @IBOutlet weak var appsCollectionView: UICollectionView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -28,7 +32,9 @@ class CategoryCell: UICollectionViewCell, UICollectionViewDataSource, UICollecti
     func setupViews() {
         backgroundColor = UIColor.clear
 
-        nameLabel.text = appCategory?.name
+        if let name = appCategory?.name {
+            nameLabel.text = name
+        }
         
         appsCollectionView.delegate = self
         appsCollectionView.dataSource = self

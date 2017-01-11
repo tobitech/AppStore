@@ -29,23 +29,23 @@
             </objects>
             <point key="canvasLocation" x="644" y="-1754"/>
         </scene>
-        <!--Featured Apps Controller-->
+        <!--Featured Apps-->
         <scene sceneID="WKk-Rf-7wW">
             <objects>
                 <collectionViewController id="kdI-5B-Lix" customClass="FeaturedAppsController" customModule="MyAppStoreMockup" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="xCh-NY-JJm">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="xCh-NY-JJm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hAr-1z-IlJ">
                             <size key="itemSize" width="375" height="230"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="150"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellId" id="q6e-dy-OlM" customClass="CategoryCell" customModule="MyAppStoreMockup" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="230"/>
+                                <rect key="frame" x="0.0" y="150" width="375" height="230"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="230"/>
@@ -137,7 +137,7 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best New Apps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdy-tn-zVV">
-                                            <rect key="frame" x="15" y="8" width="117" height="30"/>
+                                            <rect key="frame" x="15" y="8" width="352" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="R76-zN-nxt"/>
                                             </constraints>
@@ -153,6 +153,7 @@
                                     <constraint firstItem="AvR-eF-bNy" firstAttribute="leading" secondItem="q6e-dy-OlM" secondAttribute="leading" constant="15" id="K0R-CS-Oh4"/>
                                     <constraint firstAttribute="trailing" secondItem="Y89-z5-2qQ" secondAttribute="trailing" id="WHA-X4-FoK"/>
                                     <constraint firstAttribute="topMargin" secondItem="gdy-tn-zVV" secondAttribute="top" id="X4D-bL-d65"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="gdy-tn-zVV" secondAttribute="trailing" id="ZZC-2c-pfa"/>
                                     <constraint firstAttribute="bottom" secondItem="Y89-z5-2qQ" secondAttribute="bottom" id="bhY-t8-cJf"/>
                                     <constraint firstItem="gdy-tn-zVV" firstAttribute="leading" secondItem="q6e-dy-OlM" secondAttribute="leadingMargin" constant="7" id="f1l-Vt-8Q1"/>
                                     <constraint firstAttribute="bottom" secondItem="AvR-eF-bNy" secondAttribute="bottom" id="j7O-yW-u7e"/>
@@ -165,13 +166,141 @@
                                     <outlet property="nameLabel" destination="gdy-tn-zVV" id="wsH-Qb-pU6"/>
                                 </connections>
                             </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="largeCellId" id="DsF-HO-FSl" customClass="LargeCategoryCell" customModule="MyAppStoreMockup" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="390" width="375" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DEM-Gx-blw">
+                                            <rect key="frame" x="0.0" y="30" width="375" height="130"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="N9f-Sh-cbH">
+                                                <size key="itemSize" width="200" height="100"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="14" minY="0.0" maxX="14" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="appCellId" id="njZ-qC-XhS" customClass="AppCell" customModule="MyAppStoreMockup" customModuleProvider="target">
+                                                    <rect key="frame" x="14" y="3" width="200" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UbR-yf-be1">
+                                                                <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstItem="UbR-yf-be1" firstAttribute="top" secondItem="njZ-qC-XhS" secondAttribute="top" id="F7b-H1-xgT"/>
+                                                        <constraint firstAttribute="trailing" secondItem="UbR-yf-be1" secondAttribute="trailing" id="bhj-0C-n0g"/>
+                                                        <constraint firstItem="UbR-yf-be1" firstAttribute="leading" secondItem="njZ-qC-XhS" secondAttribute="leading" id="fro-Tp-rEd"/>
+                                                        <constraint firstAttribute="bottom" secondItem="UbR-yf-be1" secondAttribute="bottom" id="w3n-Oh-bqI"/>
+                                                    </constraints>
+                                                    <size key="customSize" width="200" height="100"/>
+                                                    <connections>
+                                                        <outlet property="imageView" destination="UbR-yf-be1" id="Azd-5i-R2Z"/>
+                                                    </connections>
+                                                </collectionViewCell>
+                                            </cells>
+                                        </collectionView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best New Apps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lm-ef-zUK">
+                                            <rect key="frame" x="15" y="0.0" width="360" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="RgB-K1-ver"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="4lm-ef-zUK" secondAttribute="trailing" id="9Lh-U5-x6G"/>
+                                    <constraint firstItem="DEM-Gx-blw" firstAttribute="top" secondItem="4lm-ef-zUK" secondAttribute="bottom" id="B9g-ka-t5Z"/>
+                                    <constraint firstItem="4lm-ef-zUK" firstAttribute="top" secondItem="DsF-HO-FSl" secondAttribute="top" id="IaL-WY-yEi"/>
+                                    <constraint firstItem="DEM-Gx-blw" firstAttribute="leading" secondItem="DsF-HO-FSl" secondAttribute="leading" id="KsJ-CD-V7u"/>
+                                    <constraint firstAttribute="bottom" secondItem="DEM-Gx-blw" secondAttribute="bottom" id="gMp-g3-zqV"/>
+                                    <constraint firstAttribute="trailing" secondItem="DEM-Gx-blw" secondAttribute="trailing" id="jR5-0T-fcZ"/>
+                                    <constraint firstItem="4lm-ef-zUK" firstAttribute="leading" secondItem="DsF-HO-FSl" secondAttribute="leading" constant="15" id="o1l-rS-0Xo"/>
+                                </constraints>
+                                <size key="customSize" width="375" height="160"/>
+                                <connections>
+                                    <outlet property="appsCollectionView" destination="DEM-Gx-blw" id="CpJ-eU-dX0"/>
+                                    <outlet property="nameLabel" destination="4lm-ef-zUK" id="0X0-c6-Jrv"/>
+                                </connections>
+                            </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headerId" id="yxo-yB-MAN" customClass="Header" customModule="MyAppStoreMockup" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Eh9-WK-Qsy">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LCS-Wc-0tJ">
+                                        <size key="itemSize" width="200" height="100"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="14" minY="0.0" maxX="14" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                    <cells>
+                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="bannerCellId" id="LPx-IM-iqk" customClass="BannerCell" customModule="MyAppStoreMockup" customModuleProvider="target">
+                                            <rect key="frame" x="14" y="25" width="200" height="100"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cfc-VN-suU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </view>
+                                            <constraints>
+                                                <constraint firstItem="cfc-VN-suU" firstAttribute="leading" secondItem="LPx-IM-iqk" secondAttribute="leading" id="5ww-PY-2Uy"/>
+                                                <constraint firstItem="cfc-VN-suU" firstAttribute="top" secondItem="LPx-IM-iqk" secondAttribute="top" id="Ggw-FD-p2X"/>
+                                                <constraint firstAttribute="bottom" secondItem="cfc-VN-suU" secondAttribute="bottom" id="UzC-bq-jjn"/>
+                                                <constraint firstAttribute="trailing" secondItem="cfc-VN-suU" secondAttribute="trailing" id="oDa-2b-s0S"/>
+                                            </constraints>
+                                            <size key="customSize" width="200" height="100"/>
+                                            <connections>
+                                                <outlet property="imageView" destination="cfc-VN-suU" id="cfe-Kq-cK0"/>
+                                            </connections>
+                                        </collectionViewCell>
+                                    </cells>
+                                </collectionView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best New Apps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pC7-JT-fVw">
+                                    <rect key="frame" x="15" y="0.0" width="352" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="E1z-qq-90h"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="pC7-JT-fVw" firstAttribute="leading" secondItem="yxo-yB-MAN" secondAttribute="leading" constant="15" id="8X3-IW-R3V"/>
+                                <constraint firstItem="pC7-JT-fVw" firstAttribute="top" secondItem="yxo-yB-MAN" secondAttribute="top" id="F1F-vU-YVt"/>
+                                <constraint firstAttribute="trailing" secondItem="pC7-JT-fVw" secondAttribute="trailing" constant="8" id="mV2-Ci-gGD"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="appsCollectionView" destination="Eh9-WK-Qsy" id="dOk-ao-7P2"/>
+                                <outlet property="nameLabel" destination="pC7-JT-fVw" id="c5Q-ap-XgO"/>
+                            </connections>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="kdI-5B-Lix" id="SWU-8y-OQP"/>
                             <outlet property="delegate" destination="kdI-5B-Lix" id="mUv-Ty-9Xa"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="QHj-Q1-8e6"/>
+                    <navigationItem key="navigationItem" title="Featured Apps" id="QHj-Q1-8e6"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kku-Bd-ahi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

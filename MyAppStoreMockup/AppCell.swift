@@ -33,17 +33,21 @@ class AppCell: UICollectionViewCell {
             
             titleLabel.sizeToFit()
         }
+    
+        if let name = app?.name {
+            titleLabel.text = name
+        }
+        if let category = app?.category {
+            categoryLabel.text = category
+        }
         
         
-        
-        titleLabel.text = app?.name
-        categoryLabel.text = app?.category
         
         if let price = app?.price {
             priceLabel.text = "$\(price)"
         }
         else {
-            priceLabel.text = ""
+            // priceLabel.text = ""
         }
     }
 }

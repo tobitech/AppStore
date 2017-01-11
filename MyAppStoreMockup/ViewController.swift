@@ -11,6 +11,8 @@ import UIKit
 class FeaturedAppsController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     private let cellId = "cellId"
+    private let largeCellId = "largeCellId"
+    private let headerId = "headerId"
     
     // create a structure to power the categories
     var appCategories = [AppCategory]()
@@ -26,10 +28,17 @@ class FeaturedAppsController: UICollectionViewController, UICollectionViewDelega
             
             self.collectionView?.reloadData()
         }
-        
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if indexPath.row == 2 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: largeCellId, for: indexPath) as! LargeCategoryCell
+            cell.appCategory = appCategories[indexPath.item]
+            cell.setupViews()
+            return cell
+        }
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CategoryCell
         cell.setupViews()
         
@@ -44,7 +53,30 @@ class FeaturedAppsController: UICollectionViewController, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if indexPath.row == 2 {
+            return CGSize(width: view.frame.size.width, height: 160)
+        }
+        
         return CGSize(width: view.frame.size.width, height: 230)
     }
     
+    /*
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        // return 150
+    }
+    */
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! Header
+        header.appCategory = appCategories.first
+        header.setupViews()
+        
+        return header
+    }
+    
 }
+
+
+
+
