@@ -10,6 +10,9 @@ import UIKit
 
 class CategoryCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
+    
+    var featuredAppsController: FeaturedAppsController?
+    
     var appCategory: AppCategory?
         
         {
@@ -64,7 +67,13 @@ class CategoryCell: UICollectionViewCell, UICollectionViewDataSource, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("app selected")
+        
+        if let app = appCategory?.apps?[indexPath.row] {
+            featuredAppsController?.showAppDetailForApp(app: app)
+        }
+        
+        
+        
     }
 
 }

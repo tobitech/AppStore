@@ -40,7 +40,6 @@ class AppCategory: NSObject {
                 print(error!)
                 return
             }
-            
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String: AnyObject]
                 
@@ -115,4 +114,19 @@ class App: NSObject {
     var category: String?
     var imageName: String?
     var price: NSNumber?
+    
+    var screenshots: [String]?
+    var desc: String?
+    
+    var appInformation: AnyObject?
+    
+    override func setValue(_ value: Any?, forKey key: String) {
+        if key == "description" {
+            self.desc = value as! String
+        }
+        else {
+            super.setValue(value, forKey: key)
+        }
+    }
+
 }

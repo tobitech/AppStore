@@ -36,6 +36,8 @@ class FeaturedAppsController: UICollectionViewController, UICollectionViewDelega
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: largeCellId, for: indexPath) as! LargeCategoryCell
             cell.appCategory = appCategories[indexPath.item]
             cell.setupViews()
+            cell.featuredAppsController = self
+            
             return cell
         }
         
@@ -44,6 +46,7 @@ class FeaturedAppsController: UICollectionViewController, UICollectionViewDelega
         
         cell.appCategory = appCategories[indexPath.item]
         cell.setupViews()
+        cell.featuredAppsController = self
         
         return cell
     }
@@ -67,10 +70,6 @@ class FeaturedAppsController: UICollectionViewController, UICollectionViewDelega
     }
     */
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("selected")
-    }
-    
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! Header
         header.appCategory = appCategories.first
@@ -78,6 +77,16 @@ class FeaturedAppsController: UICollectionViewController, UICollectionViewDelega
         
         return header
     }
+    
+    func showAppDetailForApp(app: App) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let appDetailController = storyboard.instantiateViewController(withIdentifier: "appDetails") as! AppDetailController
+        appDetailController.app = app
+        navigationController?.pushViewController(appDetailController, animated: true)
+        
+    }
+
     
 }
 
